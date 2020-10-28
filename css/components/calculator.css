@@ -1,0 +1,125 @@
+.calculator {
+  display: flex;
+  grid-template-rows: auto auto;
+  row-gap: 20px;
+  display: grid;
+  width: 360px;
+  background-color: var(--gray);
+  border: 15px solid var(--gray);
+  box-shadow: 0 -2px 22px rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+
+.calculator .header {
+  text-align: center;
+  padding-top: 12px;
+  font-weight: 600;
+  font-family: "Roboto", monospace, sans-serif;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-size: 24px;
+  color: var(--yellow);
+}
+
+.calculator .screen {
+  display: grid;
+  background-color: var(--green);
+  color: var(--black);
+  row-gap: 12px;
+  text-align: right;
+  padding: 8px;
+  font-family: "Digital", monospace, sans-serif;
+  overflow-x: auto;
+}
+
+.calculator .screen .formula {
+  font-size: 26px;
+  min-height: 30px;
+}
+
+.calculator .screen .display {
+  display: flex;
+  align-items: flex-end;
+  font-size: 36px;
+  justify-content: flex-end;
+}
+
+.calculator .keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 80px);
+  gap: 2px;
+  grid-template-areas:
+    "AC AC Div Mult"
+    "Seven Eight Nine Minus"
+    "Four Five Six Add"
+    "One Two Three Equal"
+    "Zero Zero Decimal Equal";
+}
+
+.calculator .keyboard button {
+  font-family: "Share Tech Mono", sans-serif;
+  font-weight: 600;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.calculator .keyboard .clear {
+  background-color: var(--red);
+  border: none;
+}
+
+.calculator .keyboard button:hover {
+  transform: scale(1.04);
+  border: 2px solid #fff;
+}
+
+.calculator .keyboard button:focus {
+  outline: none;
+}
+
+.calculator .keyboard button[data-number] {
+  background-color: var(--secondary-black);
+}
+
+.calculator .keyboard button[data-operator] {
+  background-color: var(--dark-gray);
+}
+
+.calculator .keyboard button[data-operator="="] {
+  background-color: var(--blue);
+}
+
+.calculator .keyboard button[id="clear"] {
+  grid-area: AC;
+}
+
+.calculator .keyboard button[data-operator="/"] {
+  grid-area: Div;
+}
+
+.calculator .keyboard button[data-operator="*"] {
+  grid-area: Mult;
+}
+
+.calculator .keyboard button[data-operator="+"] {
+  grid-area: Add;
+}
+
+.calculator .keyboard button[data-operator="-"] {
+  grid-area: Minus;
+}
+
+.calculator .keyboard button[data-operator="."] {
+  grid-area: Decimal;
+}
+
+.calculator .keyboard button[data-operator="="] {
+  grid-area: Equal;
+}
+
+.calculator .keyboard button[data-number="0"] {
+  grid-area: Zero;
+}

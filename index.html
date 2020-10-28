@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Javascript Calculator</title>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Calculator container  -->
+      <div class="calculator">
+        <div class="header">JS Calculator</div>
+        <!-- Calculator screen -->
+        <div id="screen" class="screen">
+          <div id="formula" class="formula"></div>
+          <div id="display" class="display">0</div>
+        </div>
+        <!-- Keys -->
+        <div id="keyboard" class="keyboard">
+          <button data-clear="AC" class="clear" id="clear">AC</button>
+          <button id="divide" data-operator="/" class="operator">/</button>
+          <button id="multiply" data-operator="*" class="operator">x</button>
+          <button id="subtract" data-operator="-" class="operator">-</button>
+          <button id="add" data-operator="+" class="operator">+</button>
+          <button id="equals" data-operator="=" class="operator">=</button>
+          <button id="zero" data-number="0" class="number">0</button>
+          <button id="one" data-number="1" class="number">1</button>
+          <button id="two" data-number="2" class="number">2</button>
+          <button id="three" data-number="3" class="number">3</button>
+          <button id="four" data-number="4" class="number">4</button>
+          <button id="five" data-number="5" class="number">5</button>
+          <button id="six" data-number="6" class="number">6</button>
+          <button id="seven" data-number="7" class="number">7</button>
+          <button id="eight" data-number="8" class="number">8</button>
+          <button id="nine" data-number="9" class="number">9</button>
+          <button id="decimal" data-operator="." class="number">.</button>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/store/store.js"></script>
+    <script type="module" src="./js/types/types.js"></script>
+    <script type="module" src="./js/reducers/reducers.js"></script>
+    <script type="module" src="./js/components/Calculator.js"></script>
+    <script type="module" src="./js/actions/calculator.js"></script>
+    <script type="module" src="./js/helpers/helpers.js"></script>
+  </body>
+</html>

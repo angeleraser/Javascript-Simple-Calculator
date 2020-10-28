@@ -1,0 +1,9 @@
+/* Base Styles */
+@import "./base/reset.min.css";
+@import "./base/settings.css";
+
+/* Fonts */
+@import "./components/fonts.css";
+
+/* Components */
+@import "./components/calculator.css";
