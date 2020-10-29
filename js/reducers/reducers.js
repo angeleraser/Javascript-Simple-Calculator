@@ -1,6 +1,8 @@
 import {
   deleteLastOperator,
   getZeroIfOnlyOperator,
+  parseLeadingZero,
+  hasTheOperators,
   parseLargeDigits,
   parseLeadingOrEndInvalidValues,
 } from "../helpers/helpers.js";
@@ -18,7 +20,15 @@ export const calculatorReducer = (state = initState, action) => {
         ...state,
         display: state.done
           ? state.display + action.payload
-          : parseLeadingOrEndInvalidValues(state.display + action.payload),
+          : hasTheOperators(
+              state.formula[state.formula.length - 1],
+              "+",
+              "-",
+              "/",
+              "*"
+            )
+          ? parseLeadingOrEndInvalidValues(state.display + action.payload)
+          : parseLeadingZero(state.display + action.payload),
       };
     case TYPES.writeFormula:
       return {

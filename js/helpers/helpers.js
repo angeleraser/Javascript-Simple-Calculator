@@ -7,6 +7,15 @@ export const parseLeadingOrEndInvalidValues = (str) => {
   }
 };
 
+export const parseLeadingZero = (str) => {
+  const splittedStr = str.split("");
+  if (/^[0/*]/.test(str)) {
+    return splittedStr.slice(1).join("");
+  } else {
+    return str;
+  }
+};
+
 export const isOperator = (val) => /[*/+.-]/g.test(val);
 
 export const hasTheOperators = (str, ...operators) => {
